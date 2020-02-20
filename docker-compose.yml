@@ -1,0 +1,102 @@
+version: "3.7"
+
+services:
+
+  nginx-ssi:
+    image: nginx
+    volumes:
+      - type: bind
+        source: ./nginx/conf.d
+        target: /etc/nginx/conf.d
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    entrypoint: ""
+    command:
+      - /bin/sh
+      - -ce
+      - |
+        echo "Run nginx in debug mode and foreground:"
+        exec nginx-debug -g 'daemon off;'
+    depends_on:
+      - angular-app-a
+      - angular-app-b
+      - angular-app-c
+      - angular-app-d
+
+  angular-app-a:
+    image: node:12.9.0
+    user: "node"
+    working_dir: /home/node/app
+    # environment:
+    #   - NODE_ENV=production
+    volumes:
+      - type: bind
+        source: ./micro-frontends/angular-app-a/
+        target: /home/node/app
+    expose:
+      - "8080"
+    command:
+      - /bin/sh
+      - -ce
+      - |
+        npm install
+        npm run with-nginx
+
+  angular-app-b:
+    image: node:12.9.0
+    user: "node"
+    working_dir: /home/node/app
+    # environment:
+    #   - NODE_ENV=production
+    volumes:
+      - type: bind
+        source: ./micro-frontends/angular-app-b/
+        target: /home/node/app
+    expose:
+      - "8080"
+    command:
+      - /bin/sh
+      - -ce
+      - |
+        npm install
+        npm run with-nginx
+
+  angular-app-c:
+    image: node:12.9.0
+    user: "node"
+    working_dir: /home/node/app
+    # environment:
+    #   - NODE_ENV=production
+    volumes:
+      - type: bind
+        source: ./micro-frontends/angular-app-c/
+        target: /home/node/app
+    expose:
+      - "8080"
+    command:
+      - /bin/sh
+      - -ce
+      - |
+        npm install
+        npm run with-nginx
+
+  angular-app-d:
+    image: node:12.9.0
+    user: "node"
+    working_dir: /home/node/app
+    # environment:
+    #   - NODE_ENV=production
+    volumes:
+      - type: bind
+        source: ./micro-frontends/angular-app-d/
+        target: /home/node/app
+    expose:
+      - "8080"
+    command:
+      - /bin/sh
+      - -ce
+      - |
+        npm install
+        npm run with-nginx

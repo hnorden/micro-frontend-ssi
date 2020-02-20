@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "with-nginx": "ng serve --host 0.0.0.0 --port 4200 --public-host \"http://localhost:8080/angular-app-d/\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
