@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+main {
+  height: calc(100vh - 26vh);
+}
+header {
+  height: 16vh;
+}
+footer {
+  height: 10vh;
+}
+@media (min-width: 768px) {
+  main {
+    height: calc(100vh - 20vh);
+  }
+  header {
+    height: 10vh;
+  }
+}
+
+main,
+header,
+footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+main > app-root,
+header > .header,
+footer > .footer {
+  max-width: 768px;
+  flex-wrap: wrap;
+  flex: inherit;
+}
+
+main,
+header,
+footer {
+  padding: 10px;
+}

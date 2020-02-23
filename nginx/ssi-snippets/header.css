@@ -1,0 +1,30 @@
+header,
+.header {
+  color: white;
+  background-color: lightblue;
+  position: relative;
+}
+
+header .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: inherit;
+}
+
+header .flex-container > div {
+  align-self: center;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.header > div {
+  text-align: center;
+}
+
+.header > div.active {
+  border-bottom: medium solid black;
+}
+
+.header > div:hover {
+  border-bottom: medium solid black;
+}

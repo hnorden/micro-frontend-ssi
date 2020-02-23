@@ -1,0 +1,30 @@
+footer,
+.footer {
+  color: white;
+  background-color: #847575;
+  position: relative;
+}
+
+footer .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: inherit;
+}
+
+footer .flex-container > div {
+  align-self: flex-end;
+  flex: 0 0 33.33337%;
+  max-width: 33.33337%;
+}
+
+.footer > div:first-child {
+  text-align: left;
+}
+
+.footer > div:nth-child(2) {
+  text-align: center;
+}
+
+.footer > div:last-child {
+  text-align: right;
+}

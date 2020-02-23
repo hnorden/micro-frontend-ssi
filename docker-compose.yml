@@ -8,6 +8,9 @@ services:
       - type: bind
         source: ./nginx/conf.d
         target: /etc/nginx/conf.d
+      - type: bind
+        source: ./nginx/ssi-snippets/
+        target: /var/www/ssi-snippets
     expose:
       - "8080"
     ports:
