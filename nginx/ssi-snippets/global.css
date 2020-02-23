@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+.hide {
+  display: none;
+}
+
 :root {
   --color-brand: #ec7b1a;
   --color-background: #fff;

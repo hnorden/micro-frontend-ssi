@@ -17,14 +17,27 @@ header .flex-container > div {
   max-width: 25%;
 }
 
+header .flex-container > div.auth {
+  align-self: center;
+  flex: 0 0 100%;
+  max-width: 100%;
+  font-size: 16px;
+  min-height: 19.2px;
+  justify-content: flex-end;
+}
+
+.header > div.auth > div.link:hover {
+  color: var(--color-brand);
+}
+
 .header > div {
   text-align: center;
 }
 
-.header > div.active {
+.header > div.link.active {
   border-bottom: medium solid var(--color-brand);
 }
 
-.header > div:hover {
+.header > div.link:hover {
   border-bottom: medium solid var(--color-brand);
 }
