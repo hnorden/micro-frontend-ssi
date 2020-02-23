@@ -22,9 +22,9 @@ header .flex-container > div {
 }
 
 .header > div.active {
-  border-bottom: medium solid black;
+  border-bottom: medium solid var(--color-brand);
 }
 
 .header > div:hover {
-  border-bottom: medium solid black;
+  border-bottom: medium solid var(--color-brand);
 }
